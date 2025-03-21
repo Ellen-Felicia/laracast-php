@@ -38,11 +38,16 @@
                              >
                                  Save
                                 </button>
+
                          </div>
                      </div>
                  </form>
              </div>
          </div>
+
+         <p class="mt-8">
+             <a href="/notes" class="text-blue-500 underline">go back...</a>
+         </p>
      </div>
  </main>
  

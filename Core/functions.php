@@ -19,6 +19,8 @@ function authorize($condition, $status = Response::NOT_AUTHORIZED)
     if(!$condition){
        abort($status);
     }
+
+    return true;
 }
 
 function base_path($path)
