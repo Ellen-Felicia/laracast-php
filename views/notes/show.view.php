@@ -9,6 +9,9 @@
          </p>
  
          <p><?= htmlspecialchars($note['body']) ?></p>
+
+
+
      </div>
  </main>
  

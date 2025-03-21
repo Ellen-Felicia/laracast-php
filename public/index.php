@@ -1,16 +1,22 @@
 <?php
  const BASE_PATH = __DIR__ . '/../';
  
-  require BASE_PATH . 'functions.php';
+  require BASE_PATH . 'Core/functions.php';
 
 spl_autoload_register(function ($class) {
-require base_path("Core/" . $class . '.php');
+  // class = Core\Database
+$class = str_replace('\\', DIRECTORY_SEPARATOR , $class);
+
+require base_path($class . '.php');
 });
  
-require base_path('router.php');
+require base_path('Core/router.php');
 
-$config = require base_path ('config.php'); // Corrigido para usar base_pathp // Corrigido para usar base_path' // Corrigido para usar base_path) // Corrigido para usar base_path; // Corrigido para usar base_path
 
+use Core\Database;
+
+
+$config = require base_path ('config.php'); 
 $db = new Database($config['database']);
 
 $id = $_GET['id'] ?? null; // Verificar se 'id' está definido
@@ -21,3 +27,5 @@ $query = "select * from posts where id = :id";
 } else {
     dd('No ID provided'); // Mensagem caso 'id' não seja fornecido
 }
+
+
