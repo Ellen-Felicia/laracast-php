@@ -14,6 +14,12 @@ function urls($value)
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
+function abort($status = 404){
+    http_response_code($status);
+    require base_path("views/{$status}.php");
+    die();
+}
+
 function authorize($condition, $status = Response::NOT_AUTHORIZED)
 {
     if(!$condition){
