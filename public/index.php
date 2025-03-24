@@ -9,6 +9,8 @@ $class = str_replace('\\', DIRECTORY_SEPARATOR , $class);
 
 require base_path($class . '.php');
 });
+
+require base_path('Core/bootstrap.php');
  
 $router = new \Core\router();
 $routes = require base_path('routes.php');
