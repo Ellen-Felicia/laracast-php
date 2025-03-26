@@ -21,7 +21,7 @@ if (! empty($errors)){
 ]);
 }
 
-$db = App::resolve(Database::class);
+$db = App::resolve(Database::class); 
 $user = $db -> query('select * from users where email = :email', [
     'email' => $email
 ])->find();
