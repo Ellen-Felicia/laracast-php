@@ -10,7 +10,9 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="<?= urls('/') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">Home</a>
               <a href="/about" class="<?= urls('/about') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">About</a>
+              <?php if ($_SESSION['user'] ?? false) : ?>
               <a href="/notes" class="<?= urls('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">Notes</a>
+              <?php endif; ?>
               <a href="/contact" class="<?= urls('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">Contact</a>
 
             </div>
