@@ -27,7 +27,7 @@
             </button>
 
             <!-- Profile dropdown -->
-            <div class="relative ml-3">
+            <div class="relative ml-2">
               <div>
               <?php if ($_SESSION['user'] ?? false) : ?>
                                  <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -35,10 +35,13 @@
                                      <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                                  </button>
                              <?php else : ?>
-                                 <a href="/register" class="text-white">Register</a>
+                              <div class="ml-2 flex items-baseline space-x-4">
+                                 <a href="/register" class="<?= urls('/register') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">Register</a>
+                                 <a href="/login" class="<?= urls('/login') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white" aria-current="page">Log In</a>
+                             </div>
                              <?php endif; ?>
               </div>
-
+                
               <!--
                 Dropdown menu, show/hide based on menu state.
 
@@ -55,6 +58,16 @@
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
               </div> -->
+            </div>
+            <div class="ml-3">  
+              <?php if ($_SESSION['user'] ?? false) : ?>                               
+                <div class="ml-15">                                 
+                <form action="/sessions" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="<?= urls('/login') ? 'bg-gray-900 text-white' : 'text-gray-300'; ?> hover:bg-gray-700 hover:text-white">Log Out</button>
+                </form>     
+                </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
