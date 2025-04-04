@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'ellen.miranda/laracast-php',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1d969b2416c8ac01dde48a32b0b883447ac29fc5',
+        'reference' => '97dc66bc4e5c3ca9d882ef8f0374b48f833a650e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'ellen.miranda/laracast-php' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1d969b2416c8ac01dde48a32b0b883447ac29fc5',
+            'reference' => '97dc66bc4e5c3ca9d882ef8f0374b48f833a650e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

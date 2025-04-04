@@ -10,6 +10,28 @@ class ComposerStaticInit2a30686aac843215c02097c468fe5b6e
         'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
     );
 
+    public static $prefixLengthsPsr4 = array (
+        'H' => 
+        array (
+            'Http\\' => 5,
+        ),
+        'C' => 
+        array (
+            'Core\\' => 5,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Http\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Http',
+        ),
+        'Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Core',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -17,6 +39,8 @@ class ComposerStaticInit2a30686aac843215c02097c468fe5b6e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2a30686aac843215c02097c468fe5b6e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2a30686aac843215c02097c468fe5b6e::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit2a30686aac843215c02097c468fe5b6e::$classMap;
 
         }, null, ClassLoader::class);

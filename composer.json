@@ -1,5 +1,16 @@
 {
-    "require": {
-        "ircmaxell/password-compat": "^1.0"
+    "name": "ellen.miranda/laracast-php",
+    "authors": [
+        {
+            "name": "Ellen Felícia Ferreira Miranda",
+            "email": "ellen.miranda@edu.unimontes.br"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+             "Core\\": "Core/",
+             "Http\\": "Http/"
+         }
     }
 }
