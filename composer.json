@@ -6,11 +6,21 @@
             "email": "ellen.miranda@edu.unimontes.br"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^12.7"
+    },
     "autoload":{
         "psr-4": {
              "Core\\": "Core/",
              "Http\\": "Http/"
          }
-    }
+        },
+        "require-dev": {
+            "pestphp/pest": "^3.8"
+        },
+        "config": {
+            "allow-plugins": {
+                "pestphp/pest-plugin": true
+            }
+        }
 }
